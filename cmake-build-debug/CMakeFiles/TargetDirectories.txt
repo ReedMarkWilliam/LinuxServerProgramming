@@ -1,0 +1,5 @@
+F:/GitRepos/LinuxServerProgramming/cmake-build-debug/CMakeFiles/LinuxServerProgamming.dir
+F:/GitRepos/LinuxServerProgramming/cmake-build-debug/CMakeFiles/ChangeTcpReceiveBuffer.dir
+F:/GitRepos/LinuxServerProgramming/cmake-build-debug/CMakeFiles/ChangeTcpSendBuffer.dir
+F:/GitRepos/LinuxServerProgramming/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/GitRepos/LinuxServerProgramming/cmake-build-debug/CMakeFiles/rebuild_cache.dir
