@@ -1,5 +1,15 @@
 #include "bits/stdc++.h"
-#include <Ws2tcpip.h>
+//#include <Ws2tcpip.h>
+#include<stdio.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<sys/socket.h>
+#include<netinet/in.h>
+#include<arpa/inet.h>
+#include<string.h>
+#include<stdlib.h>
+#include<assert.h>
+#include<fcntl.h>
 #define BUFFER_SIZE 512
 
 using namespace std;
@@ -12,16 +22,16 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     // 首先要加载套接字库，设置套接字版本信息等
-    WORD wVersionRequested;
-    WSADATA wsaData;
-    int err;
-    wVersionRequested = MAKEWORD(2, 1); //高位字节存储副版本号, 低位字节存储主版本号
-    err = WSAStartup(wVersionRequested, &wsaData);//WSAStartup，即WSA(Windows Sockets Asynchronous，Windows异步套接字)的启动命令
-    if (err != 0) return 1;
-    if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 1) { //高位字节和低位字节不正确
-        WSACleanup();
-        return 1;
-    }
+//    WORD wVersionRequested;
+//    WSADATA wsaData;
+//    int err;
+//    wVersionRequested = MAKEWORD(2, 1); //高位字节存储副版本号, 低位字节存储主版本号
+//    err = WSAStartup(wVersionRequested, &wsaData);//WSAStartup，即WSA(Windows Sockets Asynchronous，Windows异步套接字)的启动命令
+//    if (err != 0) return 1;
+//    if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 1) { //高位字节和低位字节不正确
+//        WSACleanup();
+//        return 1;
+//    }
 //    if (argc <= 2) {
 //        printf("usgae:%s ip_address port_number send_buffer_size\n", argv[0]);
 //        return 1;
@@ -34,7 +44,7 @@ int main(int argc, char* argv[]) {
     memset(&server_address, 0, sizeof(server_address));
     server_address.sin_family = AF_INET;
     inet_pton(AF_INET, ip, &server_address.sin_addr);
-    server_address.sin_port = port;
+    server_address.sin_port = htons(port);
     int sock = socket(PF_INET, SOCK_STREAM, 0);
     assert(sock >= 0);
     int sendBuf = atoi(argv[3]);
@@ -46,16 +56,21 @@ int main(int argc, char* argv[]) {
     getsockopt(sock, SOL_SOCKET, SO_SNDBUF, (char*)&sendBuf, (socklen_t*)&len);
     printf("the tcp send buffer size after setting is%d\n", sendBuf);
 
-    if (connect(sock, (sockaddr*)&server_address, sizeof(server_address)) != -1) {
-        // char buffer[BUFFER_SIZE];
-        // memset(buffer, 'a', BUFFER_SIZE);
-        char *buffer = "Get /test HTTP/1.1\r\n"
-                        "Host:www.baidu.com\r\n"
-                        "User-Agent:Mozilla/5.0\r\n\r\n";
-        send(sock, buffer, strlen(buffer), 0);
-    }
+//    if (connect(sock, (sockaddr*)&server_address, sizeof(server_address)) != -1) {
+//        // char buffer[BUFFER_SIZE];
+//        // memset(buffer, 'a', BUFFER_SIZE);
+//        char *buffer = "Get /test HTTP/1.1\r\n"
+//                        "Host:www.baidu.com\r\n"
+//                        "User-Agent:Mozilla/5.0\r\n\r\n";
+//        send(sock, buffer, strlen(buffer), 0);
+//    }
 
 //    if (connect(sock, (sockaddr*)&server_address, sizeof(server_address)) != -1) {
+//        // 使用SIGURG信号接收带外数据时，需要在发送数据前睡眠1s，等待服务器把准备工作做好。
+//        // 客户端在建立连接后如果立即发送，发送完就退出，服务端检测到后也会释放资源退出，会导致以下两种情况：
+//        // 1.当带外数据到达时，SIGURG信号的捕捉函数还没注册上，服务端采用的是默认处理动作，即忽略。
+//        // 2.带外数据还没到达时，客户端已经往发送缓冲区写完数据，然后关闭连接了，导致服务端检测到对端关闭然后退出了。
+//        sleep(2);
 //        const char* oob_data = "abc";
 //        const char* normal_data = "123";
 //        send(sock, normal_data, strlen(normal_data), 0);
@@ -63,12 +78,31 @@ int main(int argc, char* argv[]) {
 //        send(sock, normal_data, strlen(normal_data), 0);
 //    }
 
-    // Receive message from server
-    char recvBuf[1024] = {0};
-    while (recv(sock, recvBuf, sizeof(recvBuf), 0) > 0) {
-        cout << "Has received" << '\n';
-        cout << recvBuf << '\n';
+    if (connect(sock, (sockaddr*)&server_address, sizeof(server_address)) != -1) {
+        // 使用SIGURG信号接收带外数据时，需要在发送数据前睡眠1s，等待服务器把准备工作做好。
+        // 客户端在建立连接后如果立即发送，发送完就退出，服务端检测到后也会释放资源退出，会导致以下两种情况：
+        // 1.当带外数据到达时，SIGURG信号的捕捉函数还没注册上，服务端采用的是默认处理动作，即忽略。
+        // 2.带外数据还没到达时，客户端已经往发送缓冲区写完数据，然后关闭连接了，导致服务端检测到对端关闭然后退出了。
+        const char *oob_data = "abc";
+        const char *normal_data = "123";
+        send(sock, normal_data, strlen(normal_data), 0);
+        //send(sock, oob_data, strlen(oob_data), MSG_OOB);
+        send(sock, normal_data, strlen(normal_data), 0);
+        send(sock, normal_data, strlen(normal_data), 0);
+        send(sock, normal_data, strlen(normal_data), 0);
+
+        while (1) {
+            send(sock, normal_data, strlen(normal_data), 0);
+        }
     }
-    closesocket(sock);
+    printf("connect error\n");
+
+    // Receive message from server
+//    char recvBuf[1024] = {0};
+//    while (recv(sock, recvBuf, sizeof(recvBuf), 0) > 0) {
+//        cout << "Has received" << '\n';
+//        cout << recvBuf << '\n';
+//    }
+    close(sock);
     return 0;
 }

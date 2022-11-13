@@ -14,5 +14,12 @@
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/main.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/TcpEchoClient.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/Echoserver.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/Signal.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/SigUrgOutOfBand.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/SetConnectTimeO.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/LST_Timer.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/TimeWheel.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/TimeHeap.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/LibeventHelloWorld.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/edit_cache.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

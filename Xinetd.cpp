@@ -9,3 +9,5 @@
 // 在/etc/xinetd.d/下存在各种服务，将/etc/xinetd.d/telnet中的disable值由yes改为no，重启即可。
 // 如果Server /usr/sbin/in.telnetd is not executable，则需要安装telnet服务器：sudo apt-get install telnetd
 // 启动telnet服务器： /usr/sbin/in.telnetd start
+// telnet到本机：sudo telnet localhost，否则没有权限
+// 查看与xinetd相关的进程：ps -eo pid,ppid,pgid,sid,comm|grep 28840
