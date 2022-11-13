@@ -22,14 +22,12 @@ int main(int argc, char* argv[]) {
         WSACleanup();
         return 1;
     }
-//    if (argc <= 2) {
-//        printf("usgae:%s ip_address port_number send_buffer_size\n", argv[0]);
-//        return 1;
-//    }
-//    const char* ip = argv[1];
-//    int port = atoi(argv[2]);
-    const char* ip = "1.117.149.54";
-    int port = 12345;
+    if (argc <= 2) {
+        printf("usgae:%s ip_address port_number send_buffer_size\n", argv[0]);
+        return 1;
+    }
+    const char* ip = argv[1];
+    int port = atoi(argv[2]);
     sockaddr_in server_address;
     memset(&server_address, 0, sizeof(server_address));
     server_address.sin_family = AF_INET;
@@ -49,9 +47,7 @@ int main(int argc, char* argv[]) {
     if (connect(sock, (sockaddr*)&server_address, sizeof(server_address)) != -1) {
         // char buffer[BUFFER_SIZE];
         // memset(buffer, 'a', BUFFER_SIZE);
-        char *buffer = "Get /test HTTP/1.1\r\n"
-                        "Host:www.baidu.com\r\n"
-                        "User-Agent:Mozilla/5.0\r\n\r\n";
+        char *buffer = "Hello world\r\n";
         send(sock, buffer, strlen(buffer), 0);
     }
 

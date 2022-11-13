@@ -1,0 +1,26 @@
+#include "bits/stdc++.h"
+#include <Ws2tcpip.h>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    // 首先要加载套接字库，设置套接字版本信息等
+    WORD wVersionRequested;
+    WSADATA wsaData;
+    int err;
+    wVersionRequested = MAKEWORD(2, 1); //高位字节存储副版本号, 低位字节存储主版本号
+    err = WSAStartup(wVersionRequested, &wsaData);//WSAStartup，即WSA(Windows Sockets Asynchronous，Windows异步套接字)的启动命令
+    if (err != 0) return 1;
+    if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 1) { //高位字节和低位字节不正确
+        WSACleanup();
+        return 1;
+    }
+    if (argc <= 3) {
+        printf("usage:%s ip_address port_number file_name\n", argv[0]);
+        return 1;
+    }
+    const char* ip = argv[1];
+    int port = atoi(argv[2]);
+    const char* file_name = argv[3];
+
+}

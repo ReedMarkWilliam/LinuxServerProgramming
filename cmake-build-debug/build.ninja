@@ -139,6 +139,237 @@ build ChangeTcpSendBuffer.exe: CXX_EXECUTABLE_LINKER__ChangeTcpSendBuffer_Debug 
   TARGET_IMPLIB = libChangeTcpSendBuffer.dll.a
   TARGET_PDB = ChangeTcpSendBuffer.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target GetDaytime
+
+
+#############################################
+# Order-only phony target for GetDaytime
+
+build cmake_object_order_depends_target_GetDaytime: phony || CMakeFiles/GetDaytime.dir
+
+build CMakeFiles/GetDaytime.dir/GetDaytime.cpp.obj: CXX_COMPILER__GetDaytime_Debug F$:/GitRepos/LinuxServerProgramming/GetDaytime.cpp || cmake_object_order_depends_target_GetDaytime
+  DEP_FILE = CMakeFiles\GetDaytime.dir\GetDaytime.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\GetDaytime.dir
+  OBJECT_FILE_DIR = CMakeFiles\GetDaytime.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target GetDaytime
+
+
+#############################################
+# Link the executable GetDaytime.exe
+
+build GetDaytime.exe: CXX_EXECUTABLE_LINKER__GetDaytime_Debug CMakeFiles/GetDaytime.dir/GetDaytime.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lws2_32  -lwsock32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\GetDaytime.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = GetDaytime.exe
+  TARGET_IMPLIB = libGetDaytime.dll.a
+  TARGET_PDB = GetDaytime.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target IOfunctionClient
+
+
+#############################################
+# Order-only phony target for IOfunctionClient
+
+build cmake_object_order_depends_target_IOfunctionClient: phony || CMakeFiles/IOfunctionClient.dir
+
+build CMakeFiles/IOfunctionClient.dir/IOfunctionClient.cpp.obj: CXX_COMPILER__IOfunctionClient_Debug F$:/GitRepos/LinuxServerProgramming/IOfunctionClient.cpp || cmake_object_order_depends_target_IOfunctionClient
+  DEP_FILE = CMakeFiles\IOfunctionClient.dir\IOfunctionClient.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\IOfunctionClient.dir
+  OBJECT_FILE_DIR = CMakeFiles\IOfunctionClient.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target IOfunctionClient
+
+
+#############################################
+# Link the executable IOfunctionClient.exe
+
+build IOfunctionClient.exe: CXX_EXECUTABLE_LINKER__IOfunctionClient_Debug CMakeFiles/IOfunctionClient.dir/IOfunctionClient.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lws2_32  -lwsock32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\IOfunctionClient.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = IOfunctionClient.exe
+  TARGET_IMPLIB = libIOfunctionClient.dll.a
+  TARGET_PDB = IOfunctionClient.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target IOfunction
+
+
+#############################################
+# Order-only phony target for IOfunction
+
+build cmake_object_order_depends_target_IOfunction: phony || CMakeFiles/IOfunction.dir
+
+build CMakeFiles/IOfunction.dir/IOfunction.cpp.obj: CXX_COMPILER__IOfunction_Debug F$:/GitRepos/LinuxServerProgramming/IOfunction.cpp || cmake_object_order_depends_target_IOfunction
+  DEP_FILE = CMakeFiles\IOfunction.dir\IOfunction.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\IOfunction.dir
+  OBJECT_FILE_DIR = CMakeFiles\IOfunction.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target IOfunction
+
+
+#############################################
+# Link the executable IOfunction.exe
+
+build IOfunction.exe: CXX_EXECUTABLE_LINKER__IOfunction_Debug CMakeFiles/IOfunction.dir/IOfunction.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lws2_32  -lwsock32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\IOfunction.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = IOfunction.exe
+  TARGET_IMPLIB = libIOfunction.dll.a
+  TARGET_PDB = IOfunction.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target BasicCGIWithDup
+
+
+#############################################
+# Order-only phony target for BasicCGIWithDup
+
+build cmake_object_order_depends_target_BasicCGIWithDup: phony || CMakeFiles/BasicCGIWithDup.dir
+
+build CMakeFiles/BasicCGIWithDup.dir/BasicCGIWithDup.cpp.obj: CXX_COMPILER__BasicCGIWithDup_Debug F$:/GitRepos/LinuxServerProgramming/BasicCGIWithDup.cpp || cmake_object_order_depends_target_BasicCGIWithDup
+  DEP_FILE = CMakeFiles\BasicCGIWithDup.dir\BasicCGIWithDup.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\BasicCGIWithDup.dir
+  OBJECT_FILE_DIR = CMakeFiles\BasicCGIWithDup.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target BasicCGIWithDup
+
+
+#############################################
+# Link the executable BasicCGIWithDup.exe
+
+build BasicCGIWithDup.exe: CXX_EXECUTABLE_LINKER__BasicCGIWithDup_Debug CMakeFiles/BasicCGIWithDup.dir/BasicCGIWithDup.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lws2_32  -lwsock32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\BasicCGIWithDup.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = BasicCGIWithDup.exe
+  TARGET_IMPLIB = libBasicCGIWithDup.dll.a
+  TARGET_PDB = BasicCGIWithDup.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target WebReadv
+
+
+#############################################
+# Order-only phony target for WebReadv
+
+build cmake_object_order_depends_target_WebReadv: phony || CMakeFiles/WebReadv.dir
+
+build CMakeFiles/WebReadv.dir/WebReadv.cpp.obj: CXX_COMPILER__WebReadv_Debug F$:/GitRepos/LinuxServerProgramming/WebReadv.cpp || cmake_object_order_depends_target_WebReadv
+  DEP_FILE = CMakeFiles\WebReadv.dir\WebReadv.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\WebReadv.dir
+  OBJECT_FILE_DIR = CMakeFiles\WebReadv.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target WebReadv
+
+
+#############################################
+# Link the executable WebReadv.exe
+
+build WebReadv.exe: CXX_EXECUTABLE_LINKER__WebReadv_Debug CMakeFiles/WebReadv.dir/WebReadv.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lws2_32  -lwsock32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\WebReadv.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = WebReadv.exe
+  TARGET_IMPLIB = libWebReadv.dll.a
+  TARGET_PDB = WebReadv.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target SendMessage
+
+
+#############################################
+# Order-only phony target for SendMessage
+
+build cmake_object_order_depends_target_SendMessage: phony || CMakeFiles/SendMessage.dir
+
+build CMakeFiles/SendMessage.dir/SendMessage.cpp.obj: CXX_COMPILER__SendMessage_Debug F$:/GitRepos/LinuxServerProgramming/SendMessage.cpp || cmake_object_order_depends_target_SendMessage
+  DEP_FILE = CMakeFiles\SendMessage.dir\SendMessage.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\SendMessage.dir
+  OBJECT_FILE_DIR = CMakeFiles\SendMessage.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target SendMessage
+
+
+#############################################
+# Link the executable SendMessage.exe
+
+build SendMessage.exe: CXX_EXECUTABLE_LINKER__SendMessage_Debug CMakeFiles/SendMessage.dir/SendMessage.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lws2_32  -lwsock32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\SendMessage.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = SendMessage.exe
+  TARGET_IMPLIB = libSendMessage.dll.a
+  TARGET_PDB = SendMessage.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target SendFile
+
+
+#############################################
+# Order-only phony target for SendFile
+
+build cmake_object_order_depends_target_SendFile: phony || CMakeFiles/SendFile.dir
+
+build CMakeFiles/SendFile.dir/SendFile.cpp.obj: CXX_COMPILER__SendFile_Debug F$:/GitRepos/LinuxServerProgramming/SendFile.cpp || cmake_object_order_depends_target_SendFile
+  DEP_FILE = CMakeFiles\SendFile.dir\SendFile.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\SendFile.dir
+  OBJECT_FILE_DIR = CMakeFiles\SendFile.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target SendFile
+
+
+#############################################
+# Link the executable SendFile.exe
+
+build SendFile.exe: CXX_EXECUTABLE_LINKER__SendFile_Debug CMakeFiles/SendFile.dir/SendFile.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lws2_32  -lwsock32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\SendFile.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = SendFile.exe
+  TARGET_IMPLIB = libSendFile.dll.a
+  TARGET_PDB = SendFile.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -165,11 +396,25 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build BasicCGIWithDup: phony BasicCGIWithDup.exe
+
 build ChangeTcpReceiveBuffer: phony ChangeTcpReceiveBuffer.exe
 
 build ChangeTcpSendBuffer: phony ChangeTcpSendBuffer.exe
 
+build GetDaytime: phony GetDaytime.exe
+
+build IOfunction: phony IOfunction.exe
+
+build IOfunctionClient: phony IOfunctionClient.exe
+
 build LinuxServerProgamming: phony LinuxServerProgamming.exe
+
+build SendFile: phony SendFile.exe
+
+build SendMessage: phony SendMessage.exe
+
+build WebReadv: phony WebReadv.exe
 
 # =============================================================================
 # Folder targets.
@@ -179,7 +424,7 @@ build LinuxServerProgamming: phony LinuxServerProgamming.exe
 #############################################
 # Folder: F:/GitRepos/LinuxServerProgramming/cmake-build-debug
 
-build all: phony LinuxServerProgamming.exe ChangeTcpReceiveBuffer.exe ChangeTcpSendBuffer.exe
+build all: phony LinuxServerProgamming.exe ChangeTcpReceiveBuffer.exe ChangeTcpSendBuffer.exe GetDaytime.exe IOfunctionClient.exe IOfunction.exe BasicCGIWithDup.exe WebReadv.exe SendMessage.exe SendFile.exe
 
 # =============================================================================
 # Built-in targets
