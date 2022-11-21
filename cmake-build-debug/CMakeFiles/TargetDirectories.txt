@@ -21,5 +21,8 @@
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/TimeWheel.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/TimeHeap.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/LibeventHelloWorld.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/IPC_Private.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/seml.dir
+/tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/ShmChat.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/edit_cache.dir
 /tmp/tmp.HVDMapDiJ5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
