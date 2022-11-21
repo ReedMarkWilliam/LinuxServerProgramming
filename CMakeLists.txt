@@ -26,7 +26,7 @@ add_executable(ChangeTcpSendBuffer ChangeTcpSendBuffer.cpp)
 add_executable(GetDaytime GetDaytime.cpp)
 add_executable(IOfunctionClient IOfunctionClient.cpp)
 add_executable(IOfunction IOfunction.cpp)
-add_executable(BasicCGIWithDup BasicCGIWithDup.cpp src/myepoll.c)
+add_executable(BasicCGIWithDup BasicCGIWithDup.cpp src/myepoll.c IPC_Private.cpp)
 add_executable(WebReadv WebReadv.cpp)
 add_executable(SendMessage SendMessage.cpp)
 add_executable(SendFile SendFile.cpp)
@@ -43,8 +43,14 @@ add_executable(LST_Timer LST_Timer.cpp)
 add_executable(TimeWheel TimeWheel.cpp)
 add_executable(TimeHeap TimeHeap.cpp)
 add_executable(LibeventHelloWorld LibeventHelloWorld.cpp)
+add_executable(IPC_Private IPC_Private.cpp)
+add_executable(seml seml.cpp)
+add_executable(ShmChat ShmChat.cpp)
 
+target_link_libraries(LibeventHelloWorld -levent -lrt)
+target_link_libraries(ShmChat -levent -lrt)
 
-target_link_libraries(LibeventHelloWorld -levent)
 #target_link_libraries(${PROJECT_NAME} -levent)
+
+
 
